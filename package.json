@@ -1,0 +1,17 @@
+{
+  "name": "rm.js",
+  "version": "0.0.0",
+  "description": "rm -r in node.js",
+  "main": "rm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bqluan/rm.js.git"
+  },
+  "author": "Bing-Qian Luan",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "ce2d2d63a4b0e956565b0990eb1ba48107b2a259"
+}
