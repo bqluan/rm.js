@@ -4,7 +4,7 @@
   "description": "rm -r in node.js",
   "main": "rm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --require should --compilers coffee:coffee-script --reporter spec spec"
   },
   "repository": {
     "type": "git",
@@ -13,5 +13,12 @@
   "author": "Bing-Qian Luan",
   "license": "BSD",
   "readmeFilename": "README.md",
-  "gitHead": "ce2d2d63a4b0e956565b0990eb1ba48107b2a259"
+  "gitHead": "ce2d2d63a4b0e956565b0990eb1ba48107b2a259",
+  "devDependencies": {
+    "mocha": "~1.12.1",
+    "should": "~1.2.2"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6.3"
+  }
 }
