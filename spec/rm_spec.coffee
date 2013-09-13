@@ -9,15 +9,23 @@ describe 'rm(path, callback)', () ->
       done()
 
   it 'should remove 1 file', (done) ->
-    create 'file.txt'
-    rm 'file.txt', (err) ->
+    create 'afile.txt'
+    rm 'afile.txt', (err) ->
       should.not.exist err
-      should.not.exist file('file.txt')
+      should.not.exist file('afile.txt')
       done()
 
-  it 'should remove 1 folder', (done) ->
-    mkdir 'newfolder'
-    rm 'newfolder', (err) ->
+  it 'should remove 1 empth folder', (done) ->
+    mkdir 'afolder'
+    rm 'afolder', (err) ->
       should.not.exist err
-      should.not.exist folder('newfolder')
+      should.not.exist folder('afolder')
+      done()
+
+  it 'should remove 1 folder with 1 file in it', (done) ->
+    mkdir 'afolder'
+    create 'afolder/afile.txt'
+    rm 'afolder', (err) ->
+      should.not.exist err
+      should.not.exist folder('afolder')
       done()
