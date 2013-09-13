@@ -2,7 +2,7 @@
   "name": "rm.js",
   "version": "0.0.0",
   "description": "rm -r in node.js",
-  "main": "rm.js",
+  "main": "./rm",
   "scripts": {
     "test": "./node_modules/.bin/mocha --require should --compilers coffee:coffee-script --reporter spec spec"
   },
