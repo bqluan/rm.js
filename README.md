@@ -1,3 +1,3 @@
 # rm -rf in node.js
-# todo
-* rm('a', ...) fails when a/b/c exists
+
+[![Build Status](https://travis-ci.org/bqluan/rm.js.png)](https://travis-ci.org/bqluan/rm.js)
