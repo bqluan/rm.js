@@ -9,23 +9,59 @@ describe 'rm(path, callback)', () ->
       done()
 
   it 'should remove 1 file', (done) ->
-    create 'afile.txt'
-    rm 'afile.txt', (err) ->
+    create 'a_file.txt'
+    rm 'a_file.txt', (err) ->
       should.not.exist err
-      should.not.exist file('afile.txt')
+      should.not.exist file('a_file.txt')
       done()
 
   it 'should remove 1 empth folder', (done) ->
-    mkdir 'afolder'
-    rm 'afolder', (err) ->
+    mkdir 'an_empty_folder'
+    rm 'an_empty_folder', (err) ->
       should.not.exist err
-      should.not.exist folder('afolder')
+      should.not.exist folder('an_empty_folder')
       done()
 
   it 'should remove 1 folder with 1 file in it', (done) ->
-    mkdir 'afolder'
-    create 'afolder/afile.txt'
-    rm 'afolder', (err) ->
+    mkdir 'a_folder'
+    create 'a_folder/a_file.txt'
+    rm 'a_folder', (err) ->
       should.not.exist err
-      should.not.exist folder('afolder')
+      should.not.exist folder('a_folder')
       done()
+
+  it 'should remove 1 folder with 2 files in it', (done) ->
+    mkdir 'a_folder'
+    create 'a_folder/a_file.txt'
+    create 'a_folder/another_file.txt'
+    rm 'a_folder', (err) ->
+      should.not.exist err
+      should.not.exist folder('a_folder')
+      done()
+
+  it 'should remove 1 folder with 1 folder in it', (done) ->
+    mkdir 'a_folder'
+    mkdir 'a_folder/a_subfolder'
+    rm 'a_folder', (err) ->
+      should.not.exist err
+      should.not.exist folder('a_folder')
+      done()
+
+  it 'should remove 1 folder with 2 folders in it', (done) ->
+    mkdir 'a_folder'
+    mkdir 'a_folder/a_subfolder'
+    mkdir 'a_folder/another_subfolder'
+    rm 'a_folder', (err) ->
+      should.not.exist err
+      should.not.exist folder('a_folder')
+      done()
+
+  it 'should remove 1 folder with 1 folder with 1 file', (done) ->
+    mkdir 'a_folder'
+    mkdir 'a_folder/a_subfolder'
+    create 'a_folder/a_subfolder/a_file.txt'
+    rm 'a_folder', (err) ->
+      should.not.exist err
+      should.not.exist folder('a_folder')
+      done()
+    
